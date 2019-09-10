@@ -74,7 +74,7 @@ d3.csv("data.csv")
     .text(d => d.abbr);
 
     //create bubble text
-    var text = chartGroup.selectAll("text")
+    var text = chartGroup.selectAll("null")
       //.attr("class", "labels")
       //.selectAll("text")
       .data(stateData)
@@ -82,8 +82,8 @@ d3.csv("data.csv")
       .append("text");
   
     var textLabels = text
-      .attr("dx", d => xLinearScale(d.poverty))
-      .attr("dy", d => yLinearScale(d.healthcare))
+      .attr("x", d => xLinearScale(d.poverty))
+      .attr("y", d => yLinearScale(d.healthcare))
       .text(d => d.abbr)
       .attr("font-family", "sans-serif")
       .attr("font-size", "10px")
